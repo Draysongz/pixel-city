@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Handle back/forward navigation
 window.addEventListener("popstate", router);
-  function zoomOutMobile() {
-            var viewport = document.querySelector('meta[name="viewport"]');
+  // function zoomOutMobile() {
+  //           var viewport = document.querySelector('meta[name="viewport"]');
 
-            if (viewport) {
-                viewport.content = "initial-scale=0.1";
-                // viewport.content = "width=800";
-            }
-        }
+  //           if (viewport) {
+  //               viewport.content = "initial-scale=0.1";
+  //               // viewport.content = "width=800";
+  //           }
+  //       }
 
-        zoomOutMobile();
+  //       zoomOutMobile();
