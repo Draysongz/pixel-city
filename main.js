@@ -23,7 +23,7 @@ const loadPage = async (path) => {
 // Function to handle routes
 const router = async () => {
   const path = location.pathname === "/" ? "/home" : location.pathname;
-  const pagePath = `pages${path}/index.html`;
+  const pagePath = `/pages${path}/index.html`;
 
   const content = await loadPage(pagePath);
   document.querySelector("#app").innerHTML = content;
