@@ -26,7 +26,7 @@ const router = async () => {
   const pagePath = `/pages${path}/index.html`;
 
   const content = await loadPage(pagePath);
-  document.querySelector("#app").append = content;
+  document.querySelector("#app").innerHTML = content;
 };
 
 // Event listener for navigation links
