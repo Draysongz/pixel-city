@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Million Injective page</title>
+    <!--  <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+	<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="keywords" content="million Injective pixels, million, Injective, pixels, pixel">
+    <meta name="description" content="Million Injective page">
+    <meta name="ROBOTS" content="ALL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+        function zoomOutMobile() {
+            var viewport = document.querySelector('meta[name="viewport"]');
+
+            if (viewport) {
+                viewport.content = "initial-scale=0.1";
+                viewport.content = "width=1004";
+            }
+        }
+
+        zoomOutMobile();
+    </script>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Include My Custom CSS -->
+    <link href="./css/custom-injective.css" rel="stylesheet">
+    <style>
+        body {
+            min-width: 1004px;
+            background-size: max(1004px, 100vw);
+        }
+    </style>
+    <link rel="icon" href="./images/injLogo.png">
+</head>
+
+<body>
+
+    <input id="show_first_pop" name="show_first_pop" value="0" type="text" hidden readonly>
+    <input id="rate" name="rate" type="number" value="0.006" hidden readonly>
+    <input id="chain" name="chain" type="text" value="injective" hidden readonly>
+    <div style="width: max(1004px, 100%);">
+        <div id="stars-div" style="min-width: 1004px;">
+            <div class="before-nav" style="width:100%;">
+                <div class="row justify-content-center"
+                    style="width: 100%; min-width: 1004px; text-align: center; position: relative; z-index: 99;">
+                    <a class="textLight" href="https://x.com/injectivecity" target="_blank"><i
+                            class="fab fa-twitter"></i> <span>@injectivecity</span></a>
+                </div>
+                <div class="row justify-content-center"
+                    style="width: 100%; min-width: 1004px; position: relative; top: 40px; height: 230px;">
+                    <img onclick="goToHome()" src="./images/injLogo.png" style="height: 100%;  width: auto; background-color: white; border-radius: 50%;" />
+                </div>
+                <div class="justify-content-center"
+                    style="text-align:center; margin-top: 10px; position: relative; top: 80px;">
+                    <ul class="list-group list-group-horizontal justify-content-center"
+                        style="text-align:center; list-style-type: none;">
+                        <li class="nav-item">
+                            <a class="nav-link btn-round btn-green" href="/about" >
+                                <img src="./images/injAboutBtn.png" class="nav-item-img" />
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-pixeled" href="/how-to-buy" >
+                                <img src="./images/injHowtobuyBtn.png" class="nav-item-img" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <!-- text line -->
+                <div class="d-flex justify-content-between" id="after-nav"
+                    style="position: relative; top: 65px; margin-bottom: 50px;">
+                    <img src="./images/inj1000000pxText.svg" class="after-nav-img" />
+                    <img src="./images/injPerpxText.svg" class="after-nav-img" />
+                    <img src="./images/injCreateYourLegacyText.svg" class="after-nav-img" />
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- <div class="justify-content-center" style="text-align:center;">
+		<img alt="" th:src="@{~/images/BUY_POGA_2.png}" width="1000" onclick="showBuyModal()" style="z-index: 1; cursor: pointer;">
+	</div>	 -->
+        <div class="justify-content-center" style="text-align:center;">
+            <img alt="" src="./images/injBuyHere.svg" width="1000" onclick="showBuyModal()"
+                style="z-index: 1; cursor: pointer;">
+        </div>
+        <div class="d-flex justify-content-center" style="text-align:center; overflow: hidden;">
+            <div id="grid-container">
+                <div id="grid"
+                    style="position: relative; height: 1000px; width: 1000px; background-image: url(https://ks.sets.lv/public/Injective_GRID.jpg); background-size: contain;">
+                    <div id="gridTranspDiv" style="position: relative; top: 0; z-index: 998;">
+                        <img id="gridTransp" alt="Million Injective Pixels" src="./images/grid_transparent.gif"
+                            width="1000" height="1000" usemap="#image-map" ondragstart="return false;"
+                            ontouchstart="touchstarted(event);" ontouchmove="touchmoved(event);"
+                            ontouchend="return false;">
+                    </div>
+                    <div id="gridCanvasDiv" style="position: absolute; top: 0; z-index: 990;">
+                        <canvas id="gridCanvas" width="1000" height="1000"></canvas>
+                    </div>
+                </div>
+                <!-- Image Map Generated by http://www.image-map.net/ -->
+                <map name="image-map" id="image-map">
+                    <area target="_blank" alt="https://millionpixelinj.com" title="https://millionpixelinj.com"
+                        href="https://millionpixelinj.com" shape="rect"><area target="_blank" alt="CryptoKaduna"
+                        title="CryptoKaduna" coords="400,460,429,489" href="https://twitter.com/CryptoKaduna"
+                        shape="rect"><area target="_blank" alt="Ericinjective" title="Ericinjective"
+                        coords="430,460,499,529" href="https://twitter.com/ericinjective" shape="rect"><area
+                        target="_blank" alt="Albertchon" title="Albertchon" coords="500,460,569,529"
+                        href="https://twitter.com/albertchon" shape="rect"><area target="_blank" alt="Joshyysmartt"
+                        title="Joshyysmartt" coords="430,420,469,459" href="https://twitter.com/Joshyysmartt"
+                        shape="rect"><area target="_blank" alt="TheMirza_" title="TheMirza_" coords="470,420,509,459"
+                        href="https://twitter.com/TheMirza_" shape="rect"><area target="_blank" alt="cryptophrex"
+                        title="cryptophrex" coords="400,490,429,519" href="https://twitter.com/cryptophrex"
+                        shape="rect"><area target="_blank" alt="KaKaInj" title="KaKaInj" coords="400,520,429,549"
+                        href="https://twitter.com/KaKaInj" shape="rect"><area target="_blank" alt="https://Www.inj.com"
+                        title="https://Www.inj.com" href="https://Www.inj.com" shape="rect"><area target="_blank"
+                        alt="Ninja_Namek" title="Ninja_Namek" coords="460,530,489,559"
+                        href="https://twitter.com/Ninja_Namek" shape="rect"><area target="_blank" alt="OGNadeem"
+                        title="OGNadeem" coords="780,500,799,519" href="https://twitter.com/OGNadeem" shape="rect"><area
+                        target="_blank" alt="InjectiveLord" title="InjectiveLord" coords="430,530,459,559"
+                        href="https://twitter.com/InjectiveLord" shape="rect"><area target="_blank" alt="ProtocolTalis"
+                        title="ProtocolTalis" coords="80,80,119,119" href="https://twitter.com/ProtocolTalis"
+                        shape="rect"><area target="_blank" alt="Injmuncher" title="Injmuncher" coords="510,420,549,459"
+                        href="https://twitter.com/Injmuncher" shape="rect"><area target="_blank" alt="Injectivebro"
+                        title="Injectivebro" coords="550,420,589,459" href="https://twitter.com/Injectivebro"
+                        shape="rect"><area target="_blank" alt="CryptoWizardd" title="CryptoWizardd"
+                        coords="390,420,429,459" href="https://twitter.com/CryptoWizardd" shape="rect"><area
+                        target="_blank" alt="National Anthem" title="National Anthem" coords="240,0,269,19"
+                        href="https://www.youtube.com/watch?v=w5x_9KEogM8" shape="rect"><area target="_blank"
+                        alt="Pac-Man" title="Pac-Man" coords="330,70,339,79"
+                        href="https://simple.wikipedia.org/wiki/Pac-Man" shape="rect"><area target="_blank"
+                        alt="Pharaohs_dao" title="Pharaohs_dao" coords="700,250,719,269"
+                        href="https://twitter.com/pharaohs_dao" shape="rect"><area target="_blank" alt="Debrightboy"
+                        title="Debrightboy" coords="180,480,199,499" href="https://twitter.com/debrightboy"
+                        shape="rect"><area target="_blank" alt="CryptoB_K" title="CryptoB_K" coords="430,560,459,589"
+                        href="https://twitter.com/CryptoB_K" shape="rect"><area target="_blank" alt="SamelegXtra_"
+                        title="SamelegXtra_" coords="240,170,259,189" href="https://twitter.com/SamelegXtra_"
+                        shape="rect"><area target="_blank" alt="Davetatyo" title="Davetatyo" coords="450,700,469,719"
+                        href="https://twitter.com/Davetatyo" shape="rect"><area target="_blank" alt="CryptoDona7"
+                        title="CryptoDona7" coords="430,390,459,419" href="https://twitter.com/CryptoDona7"
+                        shape="rect"><area target="_blank" alt="injectivedude" title="injectivedude"
+                        coords="470,300,479,309" href="https://x.com/injectivedude?s=21&amp;t=eVqYTXPiWQPyROFF-CWNuA"
+                        shape="rect"><area target="_blank" alt="Creatin__Legacy" title="Creatin__Legacy"
+                        coords="460,560,489,589" href="https://twitter.com/Creatin__Legacy" shape="rect"><area
+                        target="_blank" alt="Ginger_INJ" title="Ginger_INJ" coords="270,430,289,449"
+                        href="https://twitter.com/Ginger_INJ" shape="rect"><area target="_blank" href=""
+                        shape="rect"><area target="_blank" alt="DegenCzar" title="DegenCzar" coords="390,30,399,39"
+                        href="https://twitter.com/DegenCzar" shape="rect"><area target="_blank"
+                        alt="https://youtu.be/DKbfBSrjVHA?si=gq3qBGKIPwAAQ-2X"
+                        title="https://youtu.be/DKbfBSrjVHA?si=gq3qBGKIPwAAQ-2X" coords="290,390,299,399"
+                        href="https://youtu.be/DKbfBSrjVHA?si=gq3qBGKIPwAAQ-2X" shape="rect"><area target="_blank"
+                        alt="DefiKasper" title="DefiKasper" coords="740,670,749,679"
+                        href="https://twitter.com/DefiKasper" shape="rect"><area target="_blank" alt="Kurayami_x9"
+                        title="Kurayami_x9" coords="190,620,209,639" href="https://twitter.com/kurayami_x9"
+                        shape="rect"><area target="_blank" alt="Treghe" title="Treghe" coords="240,770,259,789"
+                        href="https://twitter.com/treghe" shape="rect"><area target="_blank" alt="Fleisbaumcrypto"
+                        title="Fleisbaumcrypto" coords="120,220,129,229" href="https://twitter.com/fleisbaumcrypto"
+                        shape="rect"><area target="_blank" alt="Evilyeu" title="Evilyeu"
+                        href="https://twitter.com/Evilyeu" shape="rect"><area target="_blank" alt="DominikSBL"
+                        title="DominikSBL" coords="710,840,719,849" href="https://twitter.com/DominikSBL"
+                        shape="rect"><area target="_blank" alt="Sammy_Mittal" title="Sammy_Mittal" coords="610,1,629,19"
+                        href="https://twitter.com/Sammy_Mittal" shape="rect"><area target="_blank" alt="EMBLcrypto"
+                        title="EMBLcrypto" coords="840,320,859,339" href="https://twitter.com/EMBLcrypto"
+                        shape="rect"><area target="_blank" alt="njp120" title="njp120" coords="390,400,409,419"
+                        href="https://twitter.com/njp120" shape="rect"><area target="_blank" alt="Pixo777"
+                        title="Pixo777" coords="490,220,509,239" href="https://twitter.com/Pixo777" shape="rect"><area
+                        target="_blank" alt="DexterYeo6" title="DexterYeo6" coords="1,1,9,9"
+                        href="https://twitter.com/DexterYeo6" shape="rect"><area target="_blank"
+                        alt="https://linktr.ee/dogwifnunchucks?utm_source=linktree_profile_share&amp;ltsid=633c16f2-d62b-42b8-8988-4dc0187e0b5f"
+                        title="https://linktr.ee/dogwifnunchucks?utm_source=linktree_profile_share&amp;ltsid=633c16f2-d62b-42b8-8988-4dc0187e0b5f"
+                        coords="250,650,259,659"
+                        href="https://linktr.ee/dogwifnunchucks?utm_source=linktree_profile_share&amp;ltsid=633c16f2-d62b-42b8-8988-4dc0187e0b5f"
+                        shape="rect"><area target="_blank" alt="https://twitter.com/pahonja"
+                        title="https://twitter.com/pahonja" coords="0,0,0,0" href="https://twitter.com/pahonja"
+                        shape="rect"><area target="_blank" alt="Dogwifnunchucks" title="Dogwifnunchucks"
+                        coords="520,530,549,559" href="https://www.dogwifnunchucks.com/" shape="rect"><area
+                        target="_blank" alt="AlphaWolf_rekt" title="AlphaWolf_rekt" coords="630,100,649,119"
+                        href="https://twitter.com/AlphaWolf_rekt" shape="rect"><area target="_blank" alt="AOrangehaw"
+                        title="AOrangehaw" coords="310,570,329,589" href="https://twitter.com/AOrangehaw"
+                        shape="rect"><area target="_blank" alt="KiraOnInjective" title="KiraOnInjective"
+                        coords="490,530,519,559" href="https://kira.cat/" shape="rect"><area target="_blank"
+                        alt="filcu87" title="filcu87" coords="650,500,669,519" href="https://twitter.com/filcu87"
+                        shape="rect"><area target="_blank" alt="xHBKAYO" title="xHBKAYO" coords="600,340,619,359"
+                        href="https://twitter.com/xHBKAYO" shape="rect"><area target="_blank" alt="MDCryptoWorld"
+                        title="MDCryptoWorld" coords="340,670,359,689" href="https://twitter.com/MDCryptoWorld"
+                        shape="rect"><area target="_blank" alt="CryptoSenderX" title="CryptoSenderX"
+                        coords="510,330,529,349" href="https://twitter.com/CryptoSenderX" shape="rect"><area
+                        target="_blank" alt="Tee_splillz" title="Tee_splillz" coords="420,340,429,349"
+                        href="https://twitter.com/Tee_splillz" shape="rect"><area target="_blank" alt="SamelegXtra_"
+                        title="SamelegXtra_" coords="750,400,759,409" href="https://twitter.com/SamelegXtra_"
+                        shape="rect"><area target="_blank" alt="PhoenixHaiFeng" title="PhoenixHaiFeng"
+                        coords="590,670,599,689" href="https://twitter.com/PhoenixHaiFeng" shape="rect"><area
+                        target="_blank" alt="Drk_Phil" title="Drk_Phil" coords="570,290,579,299"
+                        href="https://twitter.com/Drk_Phil" shape="rect"><area target="_blank" alt="xiaobao1992"
+                        title="xiaobao1992" coords="340,330,349,339" href="https://twitter.com/xiaobao1992"
+                        shape="rect"><area target="_blank" alt="_gowthers" title="_gowthers" coords="800,640,809,649"
+                        href="https://twitter.com/_gowthers" shape="rect"><area target="_blank" alt="Gadzetoo"
+                        title="Gadzetoo" coords="270,490,289,509"
+                        href="https://x.com/Gadzetoo?t=JH6rdpMmE1OY9R0Rhg0DDw&amp;s=09" shape="rect"><area
+                        target="_blank" alt="TenzinShakya__" title="TenzinShakya__" coords="740,570,759,589"
+                        href="https://twitter.com/TenzinShakya__" shape="rect"><area target="_blank" alt="mp_quiz"
+                        title="mp_quiz" coords="680,410,699,429"
+                        href="https://x.com/mp_quiz?t=KRi0PvCgWBt7MthKoIekfQ&amp;s=09" shape="rect"><area
+                        target="_blank" alt="Qwen_ers" title="Qwen_ers" coords="210,550,229,569"
+                        href="https://twitter.com/Qwen_ers" shape="rect"><area target="_blank" alt="pumpjeet"
+                        title="pumpjeet" coords="530,400,549,419" href="https://twitter.com/pumpjeet" shape="rect"><area
+                        target="_blank" alt="Dotmochiimut" title="Dotmochiimut" coords="490,560,519,589"
+                        href="https://twitter.com/dotmochiimut" shape="rect"><area target="_blank" alt="Malkin__88"
+                        title="Malkin__88" coords="460,360,499,399" href="https://twitter.com/Malkin__88"
+                        shape="rect"><area target="_blank" alt="KillLif3" title="KillLif3" coords="410,550,429,569"
+                        href="https://twitter.com/KillLif3" shape="rect"><area target="_blank" alt="Folio_x"
+                        title="Folio_x" coords="390,550,409,569" href="https://twitter.com/folio_x" shape="rect"><area
+                        target="_blank" alt="Nftiscam" title="Nftiscam" coords="980,980,999,999"
+                        href="https://twitter.com/nftiscam" shape="rect"><area target="_blank" alt="nights_100k"
+                        title="nights_100k" coords="240,320,249,329" href="https://twitter.com/nights_100k"
+                        shape="rect"><area target="_blank" alt="babakrypto__" title="babakrypto__"
+                        coords="580,750,599,769" href="https://twitter.com/babakrypto__" shape="rect"><area
+                        target="_blank" alt="Feyorz" title="Feyorz" coords="550,380,589,419"
+                        href="https://twitter.com/feyorz" shape="rect"><area target="_blank" alt="InjectiveApes"
+                        title="InjectiveApes" coords="500,630,519,649" href="https://twitter.com/InjectiveApes"
+                        shape="rect"><area target="_blank" alt="InjectiveRAMEN" title="InjectiveRAMEN"
+                        coords="530,570,559,599" href="https://twitter.com/InjectiveRAMEN" shape="rect"><area
+                        target="_blank" alt="JohnnyBahamas3" title="JohnnyBahamas3" coords="240,860,249,869"
+                        href="https://twitter.com/JohnnyBahamas3" shape="rect"><area target="_blank" alt="opp789dra123"
+                        title="opp789dra123" coords="650,880,659,889" href="https://twitter.com/opp789dra123"
+                        shape="rect"><area target="_blank" alt="Ghydeja" title="Ghydeja" coords="810,820,819,829"
+                        href="https://twitter.com/Ghydeja" shape="rect"><area target="_blank" alt="Rex80029905"
+                        title="Rex80029905" coords="800,750,809,759" href="https://twitter.com/Rex80029905"
+                        shape="rect"><area target="_blank" alt="InjectiveItalia" title="InjectiveItalia"
+                        coords="360,670,379,689" href="https://twitter.com/InjectiveItalia" shape="rect"><area
+                        target="_blank" alt="orBitsINJ" title="orBitsINJ" coords="460,40,489,69"
+                        href="https://twitter.com/orBitsINJ" shape="rect"><area target="_blank" alt="dragospetrovan"
+                        title="dragospetrovan" coords="410,870,419,879" href="https://twitter.com/dragosd095"
+                        shape="rect"><area target="_blank" alt="PierreFortune2" title="PierreFortune2"
+                        coords="680,340,699,359" href="https://twitter.com/PierreFortune2" shape="rect"><area
+                        target="_blank" alt="ikaytotheworld" title="ikaytotheworld" coords="820,700,829,709"
+                        href="https://twitter.com/ikaytotheworld" shape="rect"><area target="_blank" alt="yakubu_usa"
+                        title="yakubu_usa" coords="870,720,879,729" href="https://twitter.com/yakubu_usa"
+                        shape="rect"><area target="_blank" alt="nobipink" title="nobipink" coords="650,800,659,809"
+                        href="https://twitter.com/nobipink" shape="rect"><area target="_blank" alt="elszymiou_420"
+                        title="elszymiou_420" coords="400,570,429,599" href="https://twitter.com/elszymiou_420"
+                        shape="rect"><area target="_blank" alt="AvgConsoomer1" title="AvgConsoomer1"
+                        coords="510,400,529,419" href="https://twitter.com/AvgConsoomer1" shape="rect"><area
+                        target="_blank" alt="ritsuenb" title="ritsuenb" coords="490,400,509,419"
+                        href="https://twitter.com/ritsuenb" shape="rect"><area target="_blank" alt="Domnik29306945"
+                        title="Domnik29306945" coords="480,410,489,419" href="https://twitter.com/Domnik29306945"
+                        shape="rect"><area target="_blank" alt="orBitsINJ" title="orBitsINJ" coords="410,1,419,119"
+                        href="https://twitter.com/orBitsINJ" shape="rect"><area target="_blank" alt="orBitsINJ"
+                        title="orBitsINJ" coords="420,110,539,119" href="https://twitter.com/orBitsINJ"
+                        shape="rect"><area target="_blank" alt="orBitsINJ" title="orBitsINJ" coords="530,0,539,109"
+                        href="https://twitter.com/orBitsINJ" shape="rect"><area target="_blank" alt="iFaraazKhan "
+                        title="iFaraazKhan " coords="570,460,599,489" href="https://twitter.com/ifaraazkhan"
+                        shape="rect"><area target="_blank" alt="Terra_Poland" title="Terra_Poland"
+                        coords="480,400,489,409" href="https://twitter.com/Terra_Poland" shape="rect"><area
+                        target="_blank" alt="CRyptOracl3" title="CRyptOracl3" coords="430,590,449,609"
+                        href="https://twitter.com/CRyptOracl3" shape="rect"><area target="_blank" alt="crlazeeee"
+                        title="crlazeeee" coords="230,370,239,379" href="https://twitter.com/crlazeeee"
+                        shape="rect"><area target="_blank" alt="KilioDao" title="KilioDao" coords="730,460,749,479"
+                        href="https://twitter.com/KilioDao" shape="rect"><area target="_blank" alt="ade_shina01"
+                        title="ade_shina01" coords="860,660,869,669" href="https://twitter.com/ade_shina01"
+                        shape="rect"><area target="_blank" alt="mvricrypto" title="mvricrypto" coords="910,610,919,619"
+                        href="https://twitter.com/mvricrypto" shape="rect"><area target="_blank" alt="monkeyloveronx"
+                        title="monkeyloveronx" coords="870,560,879,569" href="https://twitter.com/monkeyloveronx"
+                        shape="rect"><area target="_blank" alt="EmpiretradesPRO" title="EmpiretradesPRO"
+                        coords="920,480,929,489" href="https://twitter.com/EmpiretradesPRO" shape="rect"><area
+                        target="_blank" alt="Subit_Crypto" title="Subit_Crypto" coords="900,370,909,379"
+                        href="https://twitter.com/Subit_Crypto" shape="rect"><area target="_blank" alt="Hendrixouthemud"
+                        title="Hendrixouthemud" coords="560,630,579,649" href="https://twitter.com/Hendrixouthemud"
+                        shape="rect"><area target="_blank" alt="thesiddiqui95" title="thesiddiqui95"
+                        coords="860,430,869,439" href="https://twitter.com/thesiddiqui95" shape="rect"><area
+                        target="_blank"
+                        alt="https://explorer.injective.network/account/inj1jjvmu33ztwsule34ulydt80qaj9ck3m7aauujk/"
+                        title="https://explorer.injective.network/account/inj1jjvmu33ztwsule34ulydt80qaj9ck3m7aauujk/"
+                        coords="990,0,999,9"
+                        href="https://explorer.injective.network/account/inj1jjvmu33ztwsule34ulydt80qaj9ck3m7aauujk/"
+                        shape="rect"><area target="_blank" alt="RocksOnINJ" title="RocksOnINJ" coords="350,360,359,369"
+                        href="https://twitter.com/RocksOnINJ" shape="rect"><area target="_blank" alt="Sparkledanewfie"
+                        title="Sparkledanewfie" coords="10,0,29,9" href="https://twitter.com/Sparkledanewfie"
+                        shape="rect"><area target="_blank" alt="https://twitter.com/z_z4y_"
+                        title="https://twitter.com/z_z4y_" href="https://twitter.com/z_z4y_" shape="rect"><area
+                        target="_blank" alt="Bartd_b" title="Bartd_b" coords="520,370,549,399"
+                        href="https://twitter.com/bartd_b" shape="rect"><area target="_blank" alt="Sigmawhalegrind"
+                        title="Sigmawhalegrind" coords="610,210,619,219" href="https://twitter.com/sigmawhalegrind"
+                        shape="rect"><area target="_blank" alt="https://www.youtube.com/watch?v=HIcSWuKMwOw&amp;t=6s"
+                        title="https://www.youtube.com/watch?v=HIcSWuKMwOw&amp;t=6s" coords="570,490,599,519"
+                        href="https://www.youtube.com/watch?v=HIcSWuKMwOw&amp;t=6s" shape="rect"><area target="_blank"
+                        alt="1337Moonboy" title="1337Moonboy" coords="650,240,659,249"
+                        href="https://twitter.com/1337Moonboy" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/0x03soL/status/1747003322517553332/photo/1"
+                        title="https://twitter.com/0x03soL/status/1747003322517553332/photo/1" coords="310,800,319,809"
+                        href="https://twitter.com/0x03soL/status/1747003322517553332/photo/1" shape="rect"><area
+                        target="_blank" alt="https://twitter.com/leonidasoprotos"
+                        title="https://twitter.com/leonidasoprotos" coords="390,360,399,369" href="leonidasoprotos"
+                        shape="rect"><area target="_blank" alt="chinedu_nw53790" title="chinedu_nw53790"
+                        coords="660,170,669,179" href="https://twitter.com/chinedu_nw53790" shape="rect"><area
+                        target="_blank" alt="callmerichking" title="callmerichking" coords="530,170,539,179"
+                        href="https://twitter.com/callmerichking" shape="rect"><area target="_blank" alt="bephonk"
+                        title="bephonk" coords="410,400,429,419" href="https://twitter.com/bephonk" shape="rect"><area
+                        target="_blank" alt="fleisbaumcrypto" title="fleisbaumcrypto" coords="450,30,459,39"
+                        href="https://twitter.com/fleisbaumcrypto" shape="rect"><area target="_blank" alt="Airdroooop"
+                        title="Airdroooop" coords="450,70,459,79" href="https://twitter.com/Airdroooop"
+                        shape="rect"><area target="_blank" alt="AgraGunawa97024" title="AgraGunawa97024"
+                        coords="490,70,499,79" href="https://twitter.com/AgraGunawa97024" shape="rect"><area
+                        target="_blank" alt="Frinjective" title="Frinjective" coords="610,570,739,679"
+                        href="https://twitter.com/Frinjective" shape="rect"><area target="_blank" alt="Original_tega"
+                        title="Original_tega" coords="190,200,199,209" href="https://twitter.com/Original_tega"
+                        shape="rect"><area target="_blank" alt="Dano_crypt" title="Dano_crypt" coords="290,230,299,239"
+                        href="https://twitter.com/Dano_crypt" shape="rect"><area target="_blank" alt="honeybhau52"
+                        title="honeybhau52" coords="330,170,339,179" href="https://twitter.com/honeybhau52"
+                        shape="rect"><area target="_blank" alt="EMEBOK_" title="EMEBOK_" coords="430,170,439,179"
+                        href="https://twitter.com/EMEBOK_" shape="rect"><area target="_blank" alt="BUMS_NFT_"
+                        title="BUMS_NFT_" coords="550,530,569,549" href="https://twitter.com/BUMS_NFT_"
+                        shape="rect"><area target="_blank" alt="irlekene" title="irlekene" coords="560,230,569,239"
+                        href="https://twitter.com/irlekene" shape="rect"><area target="_blank" alt="hoangthach0709"
+                        title="hoangthach0709" coords="490,30,499,39" href="https://twitter.com/hoangthach0709"
+                        shape="rect"><area target="_blank" alt="https://twitter.com/mc_blackpanther"
+                        title="https://twitter.com/mc_blackpanther" coords="380,460,399,479"
+                        href="https://twitter.com/mc_blackpanther" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/_nottim" title="https://twitter.com/_nottim" coords="230,710,239,719"
+                        href="https://twitter.com/_nottim" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/_NinjaTir0" title="https://twitter.com/_NinjaTir0"
+                        coords="300,730,309,739" href="https://twitter.com/_NinjaTir0" shape="rect"><area
+                        target="_blank" alt="MavenINJas" title="MavenINJas" coords="700,200,709,209"
+                        href="https://twitter.com/MavenINJas" shape="rect"><area target="_blank" alt="TheRealNesfield"
+                        title="TheRealNesfield" coords="380,730,389,739" href="https://twitter.com/TheRealNesfield"
+                        shape="rect"><area target="_blank" alt="BoredApeINJClub" title="BoredApeINJClub"
+                        coords="610,680,739,789"
+                        href="https://twitter.com/InjectiveClub?t=i4rvPhTZWQ8qmuDynkh2_A&amp;s=09" shape="rect"><area
+                        target="_blank" alt="7crypwalk7" title="7crypwalk7" coords="380,450,389,459"
+                        href="https://twitter.com/7crypwalk7" shape="rect"><area target="_blank" alt="DejectedRoom"
+                        title="DejectedRoom" coords="470,410,479,419" href="https://twitter.com/DejectedRoom"
+                        shape="rect"><area target="_blank" alt="imbanytui_doter" title="imbanytui_doter"
+                        coords="0,990,9,999" href="https://twitter.com/imbanytui_doter" shape="rect"><area
+                        target="_blank" alt="TPetsfather" title="TPetsfather" coords="330,390,339,399"
+                        href="https://twitter.com/TPetsfather" shape="rect"><area target="_blank" alt="OrVaron23"
+                        title="OrVaron23" coords="380,480,399,499" href="https://twitter.com/OrVaron23"
+                        shape="rect"><area target="_blank" alt="https://twitter.com/Angelomelillo8"
+                        title="https://twitter.com/Angelomelillo8" coords="530,350,549,369"
+                        href="https://twitter.com/Angelomelillo8" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/Angelomelillo8" title="https://twitter.com/Angelomelillo8"
+                        coords="550,370,559,379" href="https://twitter.com/Angelomelillo8" shape="rect"><area
+                        target="_blank" alt="j00ce_inc" title="j00ce_inc" coords="590,420,629,459"
+                        href="https://twitter.com/j00ce_inc" shape="rect"><area target="_blank" alt="Angelomelillo8"
+                        title="Angelomelillo8" coords="460,340,479,359" href="https://twitter.com/Angelomelillo8"
+                        shape="rect"><area target="_blank" alt="nans_inj" title="nans_inj" coords="460,410,469,419"
+                        href="https://twitter.com/nans_inj" shape="rect"><area target="_blank" alt="_Cypriot"
+                        title="_Cypriot" coords="790,210,799,219" href="https://twitter.com/_Cypriot" shape="rect"><area
+                        target="_blank" alt="Lefty59796314" title="Lefty59796314" coords="380,500,399,519"
+                        href="https://twitter.com/Lefty59796314" shape="rect"><area target="_blank" alt="microvision"
+                        title="microvision" coords="720,520,739,539" href="https://Www.microvision.com"
+                        shape="rect"><area target="_blank" alt="jer_iee" title="jer_iee" coords="430,790,439,799"
+                        href="https://twitter.com/jer_iee" shape="rect"><area target="_blank" alt="x_utopia24"
+                        title="x_utopia24" coords="770,260,779,269" href="https://twitter.com/x_utopia24"
+                        shape="rect"><area target="_blank" alt="Kindle_Gg" title="Kindle_Gg" coords="380,840,389,849"
+                        href="https://twitter.com/Kindle_Gg" shape="rect"><area target="_blank" alt="doctor_gray8"
+                        title="doctor_gray8" coords="350,790,359,799" href="https://twitter.com/doctor_gray8"
+                        shape="rect"><area target="_blank" alt="frekecletus" title="frekecletus"
+                        coords="290,820,299,829" href="https://twitter.com/frekecletus" shape="rect"><area
+                        target="_blank" alt="WongEtan69" title="WongEtan69" coords="740,300,749,309"
+                        href="https://twitter.com/WongEtan69" shape="rect"><area target="_blank" alt="nbillava1"
+                        title="nbillava1" coords="270,690,279,699" href="https://twitter.com/nbillava1"
+                        shape="rect"><area target="_blank" alt="novan_rmd" title="novan_rmd" coords="320,620,339,639"
+                        href="https://twitter.com/novan_rmd" shape="rect"><area target="_blank" alt="Haszisz_NFT"
+                        title="Haszisz_NFT" coords="570,520,599,549" href="https://twitter.com/Haszisz_NFT"
+                        shape="rect"><area target="_blank" alt="nameis_dharshi" title="nameis_dharshi"
+                        coords="790,320,799,329" href="https://twitter.com/nameis_dharshi" shape="rect"><area
+                        target="_blank" alt="Injective_Bears" title="Injective_Bears" coords="290,350,299,359"
+                        href="https://twitter.com/Injective_Bears" shape="rect"><area target="_blank" alt="Goblin_INJ"
+                        title="Goblin_INJ" coords="410,650,419,659" href="https://twitter.com/Goblin_INJ"
+                        shape="rect"><area target="_blank" alt="McTwice_Two" title="McTwice_Two"
+                        coords="380,270,389,279" href="https://twitter.com/McTwice_Two" shape="rect"><area
+                        target="_blank" alt="semprong2023" title="semprong2023" coords="550,860,559,869"
+                        href="https://twitter.com/semprong2023" shape="rect"><area target="_blank" alt="Rohit_3108"
+                        title="Rohit_3108" coords="170,430,179,439" href="https://twitter.com/Rohit_3108"
+                        shape="rect"><area target="_blank" alt="Degenmonkeez" title="Degenmonkeez"
+                        coords="650,290,659,299" href="https://twitter.com/degenmonkeez" shape="rect"><area
+                        target="_blank" alt="Harry_19_92" title="Harry_19_92" coords="900,420,909,429"
+                        href="https://twitter.com/Harry_19_92" shape="rect"><area target="_blank" alt="WesyNgarats"
+                        title="WesyNgarats" coords="850,390,859,399" href="https://twitter.com/WesyNgarats"
+                        shape="rect"><area target="_blank" alt="arionflamez" title="arionflamez"
+                        coords="810,390,819,399" href="https://twitter.com/arionflamez" shape="rect"><area
+                        target="_blank" alt="InjectiveAsh" title="InjectiveAsh" coords="230,470,239,479"
+                        href="https://twitter.com/InjectiveAsh" shape="rect"><area target="_blank" alt="0xkidC"
+                        title="0xkidC" coords="450,590,489,629" href="https://twitter.com/0xkidC" shape="rect"><area
+                        target="_blank" alt="inj_simps" title="inj_simps" coords="500,740,509,749"
+                        href="https://twitter.com/inj_simps" shape="rect"><area target="_blank" alt="Inject_Wizard"
+                        title="Inject_Wizard" coords="530,680,539,689" href="https://twitter.com/Inject_Wizard"
+                        shape="rect"><area target="_blank" alt="NinjasKarlo" title="NinjasKarlo"
+                        coords="540,720,549,729" href="https://twitter.com/NinjasKarlo" shape="rect"><area
+                        target="_blank" alt="xxxpanday" title="xxxpanday" coords="500,780,509,789"
+                        href="https://twitter.com/xxxpanday" shape="rect"><area target="_blank" alt="NinzaXyz"
+                        title="NinzaXyz" coords="440,750,449,759" href="https://twitter.com/NinzaXyz" shape="rect"><area
+                        target="_blank" alt="Goblin_INJ" title="Goblin_INJ" coords="330,520,399,549"
+                        href="https://twitter.com/Goblin_INJ" shape="rect"><area target="_blank" alt="www.youtube.com"
+                        title="www.youtube.com" coords="490,600,509,629"
+                        href="https://www.youtube.com/watch?v=OxC_JKRjBVg" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/trysigizz41" title="https://twitter.com/trysigizz41"
+                        coords="170,680,179,689" href="https://twitter.com/trysigizz41" shape="rect"><area
+                        target="_blank" alt="https://twitter.com/Suryafks" title="https://twitter.com/Suryafks"
+                        coords="170,720,179,729" href="https://twitter.com/Suryafks" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/0xNFTs100" title="https://twitter.com/0xNFTs100"
+                        coords="210,750,219,759" href="https://twitter.com/0xNFTs100" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/ProfOfNarnia" title="https://twitter.com/ProfOfNarnia"
+                        coords="220,670,229,679" href="https://twitter.com/ProfOfNarnia" shape="rect"><area
+                        target="_blank" alt="injectedbirb" title="injectedbirb" coords="800,150,809,159"
+                        href="https://twitter.com/injectedbirb" shape="rect"><area target="_blank" alt="Cantowolf14"
+                        title="Cantowolf14" coords="740,150,749,159" href="https://twitter.com/Cantowolf14"
+                        shape="rect"><area target="_blank" alt="https://twitter.com/INJDreadlords"
+                        title="https://twitter.com/INJDreadlords" coords="420,370,429,379"
+                        href="https://twitter.com/INJDreadlords" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/nft_dragonz" title="https://twitter.com/nft_dragonz"
+                        coords="520,650,529,659" href="https://twitter.com/nft_dragonz" shape="rect"><area
+                        target="_blank" alt="AjiKristia" title="AjiKristia" coords="470,190,479,199"
+                        href="https://twitter.com/AjiKristia" shape="rect"><area target="_blank" alt="JoyIkem3"
+                        title="JoyIkem3" coords="430,210,439,219" href="https://twitter.com/JoyIkem3" shape="rect"><area
+                        target="_blank" alt="iam_Dictvtor" title="iam_Dictvtor" coords="290,280,299,289"
+                        href="https://twitter.com/iam_Dictvtor" shape="rect"><area target="_blank" alt="joyyakubu9949"
+                        title="joyyakubu9949" coords="230,260,239,269" href="https://twitter.com/joyyakubu9949"
+                        shape="rect"><area target="_blank" alt="alright_angels" title="alright_angels"
+                        coords="170,290,179,299" href="https://twitter.com/alright_angels" shape="rect"><area
+                        target="_blank" alt="StylMixlas" title="StylMixlas" coords="180,330,189,339"
+                        href="https://twitter.com/StylMixlas" shape="rect"><area target="_blank" alt="Gladiators_INJ"
+                        title="Gladiators_INJ" coords="630,360,639,369" href="https://twitter.com/Gladiators_INJ"
+                        shape="rect"><area target="_blank" alt="kvng_rancho" title="kvng_rancho"
+                        coords="240,520,249,529" href="https://twitter.com/kvng_rancho" shape="rect"><area
+                        target="_blank" alt="InjectiveGeisha" title="InjectiveGeisha" coords="600,540,629,569"
+                        href="https://twitter.com/InjectiveGeisha" shape="rect"><area target="_blank" alt="@javorko67"
+                        title="@javorko67" coords="0,290,19,309" href="https://www.youtube.com/@javorko67"
+                        shape="rect"><area target="_blank"
+                        alt="https://x.com/JoyIkem3?t=wzzNvXCwSblVU3XFDHo2Cg&amp;s=09"
+                        title="https://x.com/JoyIkem3?t=wzzNvXCwSblVU3XFDHo2Cg&amp;s=09" coords="670,160,679,169"
+                        href="https://x.com/JoyIkem3?t=wzzNvXCwSblVU3XFDHo2Cg&amp;s=09" shape="rect"><area
+                        target="_blank" alt="SundayMixtape_" title="SundayMixtape_" coords="170,530,179,539"
+                        href="https://twitter.com/SundayMixtape_" shape="rect"><area target="_blank" alt="bouliicrypto"
+                        title="bouliicrypto" coords="150,570,159,579" href="https://twitter.com/bouliicrypto"
+                        shape="rect"><area target="_blank" alt="Cinfel98" title="Cinfel98" coords="190,590,199,599"
+                        href="https://twitter.com/Cinfel98" shape="rect"><area target="_blank" alt="SkillsMonkeys"
+                        title="SkillsMonkeys" coords="270,570,279,579" href="https://twitter.com/SkillsMonkeys"
+                        shape="rect"><area target="_blank" alt="kambing1muda" title="kambing1muda"
+                        coords="280,660,289,669" href="https://twitter.com/kambing1muda" shape="rect"><area
+                        target="_blank" alt="https://twitter.com/akablacklight"
+                        title="https://twitter.com/akablacklight" coords="100,620,109,629"
+                        href="https://twitter.com/akablacklight" shape="rect"><area target="_blank"
+                        alt="https://twitter.com/Umut_drgn_" title="https://twitter.com/Umut_drgn_" coords="30,0,39,9"
+                        href="https://twitter.com/Umut_drgn_" shape="rect">
+                </map>
+            </div>
+        </div>
+        <!-- <div class="row"><p><strong>thumbX=<span id="thumbX"></span>, thumbY=<span id="thumbY"></span>, pointX=<span id="pointX"></span>, pointY=<span id="pointY"></span>,</strong></p> </div> -->
+        <footer>
+            <div class="container after-canvas footer-container">
+                <!-- <div class="d-flex justify-content-center">
+		      <img th:src="@{~/images/injLogo.svg}" style="padding-top: 150px; width: 300px"/>
+		  	</div> -->
+                <div class="row justify-content-between" style="margin-top:300px;">
+                    <div class="p-2"><a class="textLight" target="_blank" href="/about" style="margin: 10px;" onclick="route()">About</a>
+                    </div>
+                    <div class="p-2"><a class="textLight" target="_blank" href="/how-to-buy" onclick="route()" style="margin: 10px;">How
+                            To Buy</a></div>
+                    <div class="p-2"><a class="textLight" target="_blank" href="/faq" onclick="route()" style="margin: 10px;">FAQ</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="margin-bottom:100px;margin-top:50px;">
+                    <div class="p-2"><a class="textLight" target="_blank" href="/terms" onclick="route()" style="margin: 10px;">Terms and
+                            Conditions</a></div>
+                </div>
+             
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="addModal">
+        <div class="modal fade roundedDiv" id="buy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="width: 900px!important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="buyModalCloseBtn" data-dismiss="modal"
+                            aria-label="Close">
+                            <img src="./images/injXdark.svg" style="height: 40px; width: 40px" />
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- MultiStep Form -->
+                        <div class="container" id="multiStepFormDiv">
+                            <div class="row justify-content-center mt-0">
+                                <div class="card" style="width: 100%; padding: 0;">
+                                    <div class="row">
+                                        <div class="col-md-12 mx-0">
+                                            <form id="msform">
+                                                <!-- progressbar -->
+                                                <ul id="progressbar">
+                                                    <li class="active prog-bar-li" id="account">Choose px</li>
+                                                    <li id="personal" class="prog-bar-li">Upload</li>
+                                                    <li id="payment" class="prog-bar-li">Payment</li>
+                                                    <li id="confirm" class="prog-bar-li">Finish</li>
+                                                </ul> <!-- fieldsets -->
+                                                <fieldset id="fieldset1">
+                                                    <div class="form-card">
+                                                        <div class="row justify-content-center"
+                                                            style=" margin-top: 16px;">
+                                                            <h4><strong>Choose the pixel size for your picture!</strong>
+                                                            </h4>
+                                                            <p style="margin-bottom: 0px;">The more pixels you choose
+                                                                the better view of your picture will be visible on the
+                                                                map.</p>
+                                                            <p style="margin-bottom: 0px;"><small>We recommend choosing
+                                                                    at least a 20x20 pixel size.</small></p>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <table style="width: fit-content;">
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td id="minusYTd">
+                                                                        <span id="minusY"
+                                                                            onclick="updatePixelField(0,-20)"
+                                                                            class="minus bg-dark noselect plusMinusSpan">-</span>
+                                                                    </td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left"><span id="minusX"
+                                                                            onclick="updatePixelField(-20,0)"
+                                                                            class="minus bg-dark noselect plusMinusSpan pl"
+                                                                            style="margin-right: 20px;">-</span></td>
+                                                                    <td>
+                                                                        <div class="justify-content-center pixelFieldContainer"
+                                                                            style="text-align: center; vertical-align: middle; padding-left: 3px;">
+                                                                            <div id="pixelFieldSizeDisplay"
+                                                                                style="background-color: #132353; width: 20px; height: 20px; ">
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td><span id="plusX"
+                                                                            onclick="updatePixelField(20,0)"
+                                                                            class="plus bg-dark noselect plusMinusSpan"
+                                                                            style=" margin-left: 20px;">+</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td id="plusYTd">
+                                                                        <span id="plusY"
+                                                                            onclick="updatePixelField(0,20)"
+                                                                            class="plus bg-dark noselect plusMinusSpan ">+</span>
+                                                                    </td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <h3><span id="pixelFieldSizeDisplaySpan"></span></h3>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <p style="margin-bottom: 0px;">Sum: <span id="sum"></span>
+                                                                <span>INJ</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <a name="next" id="set1NextBtn"
+                                                        class="next action-button btn btnLight btnRounded">Next</a>
+                                                </fieldset>
+                                                <fieldset id="fieldset3">
+                                                    <div class="form-card">
+                                                        <div class="row justify-content-center">
+                                                            <h4><strong>Upload your picture for the
+                                                                    <span>Injective</span> pixel wall!</strong></h4>
+                                                            <p>Please use good-quality pictures for the best result.</p>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="input-group mb-3">
+                                                                <div class="file-upload">
+                                                                    <button hidden
+                                                                        class="file-upload-btn btn btn-lg btn-success"
+                                                                        type="button"
+                                                                        onclick="$('.file-upload-input').trigger( 'click' )">Select
+                                                                        Image</button>
+                                                                    <div class="image-upload-wrap">
+                                                                        <input class="file-upload-input" type='file'
+                                                                            onchange="readURL(this);" id="clientPicture"
+                                                                            accept="image/png, image/jpeg" />
+                                                                        <div class="drag-text textDark">
+                                                                            <h3><small style="padding: 10px;">Drag or
+                                                                                    Click to select</small></h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="file-upload-content">
+                                                                        <img class="file-upload-image" src="#"
+                                                                            alt="your image" />
+
+                                                                        <div class="image-title-wrap">
+                                                                            <a onclick="removeUpload()"
+                                                                                class="remove-image btn action-button btnRounded"
+                                                                                style="color : #414066; background: lightgray; pointer: cursor;">Remove
+                                                                                <span hidden
+                                                                                    class="image-title">Uploaded
+                                                                                    Image</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center"
+                                                            style="padding-left: 3vw; padding-right: 3vw;">
+                                                            <p><small>Copy the link which will be linked with your
+                                                                    picture. It can be your Twitter, Instagram, NFT
+                                                                    marketplace page, link to a favorite song,
+                                                                    metaverse, etc.</small></p>
+                                                            <input type="text" id="clientUrl"
+                                                                class="form-control text-center buyTextInput"
+                                                                placeholder="Input your URL here" required
+                                                                autocomplete="off">
+                                                            <label class="inputLabel" style="text-align: left;"
+                                                                for="clientUrl"><span id="notValidUrl"
+                                                                    style="color: transparent">Please enter your link
+                                                                    here</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" name="previous"
+                                                        class="previous action-button-previous btn btn-secondary"
+                                                        value="Previous" hidden />
+                                                    <a name="make_payment" id="set3NextBtn"
+                                                        class="next action-button btn btnLight btnRounded">Next</a>
+                                                </fieldset>
+                                                <fieldset id="fieldset2">
+                                                    <div class="form-card">
+                                                        <div class="row justify-content-center">
+                                                            <h4><strong>You have chosen <span
+                                                                        id="pixelFieldSizeDisplayH"></span>
+                                                                    pixels.</strong> </h4>
+                                                            <p id="orderP" class="textDark" style="font-size: 20px;">
+                                                                <strong><span> </span>Order ID #<span
+                                                                        id="orderId"></span></strong></p>
+                                                        </div>
+                                                        <div class="row justify-content-left"
+                                                            style="margin-top: 25px; padding-left: 3vw; padding-right: 3vw;">
+                                                            <label class="inputLabel" style="text-align: left;"
+                                                                for="officialAddress"><strong>1.</strong> Make a
+                                                                transaction of <span id="sum2"></span> <Span>INJ</Span>
+                                                                to the official wallet</label>
+                                                            <div class="input-group">
+                                                                <input type="text" id="officialAddress"
+                                                                    class="form-control text-center buyTextInput"
+                                                                    style="height: 40px;" readonly
+                                                                    value="inj1cp7074ccr5vsz9u4a9myskmdmslqs76lslpdgd">
+                                                                <div class="input-group-append">
+                                                                    <button style="color: #343FF5;" id="copyAdrBtn"
+                                                                        class="btn copy-btn" type="button"
+                                                                        onclick="copyToClipboard()"
+                                                                        ontouchend="copyToClipboard()">Copy</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-left"
+                                                            style="margin-top: 25px; padding-left: 3.5vw; padding-right: 3.5vw;">
+                                                            <label class="inputLabel" style="text-align: left;"
+                                                                for="clientAddress">
+                                                                <strong>2.</strong> Paste the address from which you
+                                                                have made the payment
+                                                            </label>
+                                                            <input type="text" id="clientAddress"
+                                                                class="form-control text-center buyTextInput"
+                                                                placeholder="Input your address here" required
+                                                                autocomplete="off">
+                                                            <label class="inputLabel" style="text-align: left;"
+                                                                for="clientAddress"><span id="notValidAddress"
+                                                                    style="color: transparent"> Please enter a valid
+                                                                    <span>Injective</span> address</span></label>
+                                                            <p><strong><span>IF THERE ARE ANY QUESTIONS, PLEASE CONTACT
+                                                                        US ON Twitter <a class="textDark"
+                                                                            href="https://twitter.com/MillionPixelINJ"
+                                                                            target="_blank"><span>@MillionPixelINJ</span></a>
+                                                                        OR EMAIL</span> <a
+                                                                        href="mailto:info@millionpixelwall.com"
+                                                                        class="textDark"
+                                                                        target="_blank"><span>info@millionpixelwall.com</span></a></strong>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" name="previous"
+                                                        class="previous action-button-previous btn btn-secondary"
+                                                        value="Previous" hidden />
+                                                    <a name="next" id="set2NextBtn"
+                                                        class="next action-button btn btnLight btnRounded">Next</a>
+                                                </fieldset>
+
+                                                <fieldset id="fieldset4">
+                                                    <div class="form-card">
+                                                        <div class="row justify-content-center">
+                                                            <h4><strong>Make sure we can reach out to you if there are
+                                                                    any questions!</strong></h4>
+                                                        </div>
+                                                        <div class="row justify-content-left"
+                                                            style="margin-top: 24px; ">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend ">
+                                                                    <span class="input-group-text buyTextInput textDark"
+                                                                        id="basic-addon3"><i
+                                                                            class="fas fa-envelope"></i></span>
+                                                                </div>
+                                                                <input type="email"
+                                                                    class="form-control buyTextInput textDark"
+                                                                    id="clientEmail" aria-describedby="basic-addon3"
+                                                                    placeholder="E-mail (required)" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-left"
+                                                            style="margin-top: 16px; ">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span
+                                                                        class="input-group-text form-control buyTextInput textDark"
+                                                                        id="basic-addon3"><i
+                                                                            class="fab fa-discord"></i></span>
+                                                                </div>
+                                                                <input placeholder="Discord" type="text"
+                                                                    class="form-control buyTextInput" id="clientDiscord"
+                                                                    aria-describedby="basic-addon3">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-left"
+                                                            style="margin-top: 16px; ">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span
+                                                                        class="input-group-text form-control buyTextInput textDark"
+                                                                        id="basic-addon3"><i
+                                                                            class="fab fa-twitter"></i></span>
+                                                                </div>
+                                                                <input placeholder="Twitter" type="text"
+                                                                    class="form-control buyTextInput" id="clientTwitter"
+                                                                    aria-describedby="basic-addon3">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center"
+                                                            style="margin-top: 6px;">
+                                                            <span class="form-check-label" id="terms-p"
+                                                                style="color: transparent; ">Please check terms and
+                                                                payment boxes!</span>
+                                                        </div>
+                                                        <div class="row justify-content-center"
+                                                            style="margin-top: 6px; ">
+                                                            <div>
+                                                                <input id="termsCheck" class="form-check-input "
+                                                                    type="checkbox" value="">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    I agree to <span><a class="textDark" target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            href="/terms">Terms and
+                                                                            Conditions</a></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div>
+                                                                <input id="paymentCheck" class="form-check-input"
+                                                                    type="checkbox" value="">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    I have made the payment
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" name="previous"
+                                                        class="previous action-button-previous btn btn-secondary"
+                                                        value="Previous" hidden />
+                                                    <a name="finish" id="buySubmitBtn"
+                                                        class="next action-button action-button-next btn btnLight btnRounded">Let's
+                                                        go</a>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="someModal roundedDiv">
+        <div class="modal fade" id="buySuccess" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="width: 900px!important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="buySuccessCloseBtn" data-dismiss="modal"
+                            aria-label="Close">
+                            <img src="./images/injXdark.svg" style="height: 40px; width: 40px" />
+                        </button>
+                    </div>
+                    <div class="modal-body" style="margin-bottom: 5vh;">
+                        <div class="container">
+                            <div class="row justify-content-center mt-0">
+                                <div class="form-card" id="formSuccessFields">
+                                    <div class="row justify-content-center"
+                                        style="margin: auto; text-align:center;max-width: 100%;padding: 5px;">
+                                        <h4><strong>Congratulations!<br>You are now the owner of the pixels of the
+                                                Million Pixel wall!</strong></h4>
+                                        <p>Your pixel picture will be visible within 24h after the payment.</p>
+                                    </div>
+                                    <div class="row justify-content-center" style="margin-top: 16px; ">
+                                        <img src="./images/injLogo.svg" style="max-height: 30vh; object-fit: contain;" />
+                                    </div>
+                                    <div class="row justify-content-center"
+                                        style=" text-align:center; margin-top: 16px; padding: 5px;">
+                                        <p style="text-align: center; padding: 5px;">You have engraved your pixels in
+                                            the history of <span>Injective</span>!
+                                            <br>With this order number, you will participate in the pixel wall lottery.
+                                            Follow us on Twitter to find out about the draws.<span><a class="textDark"
+                                                    target="_blank" rel="noopener noreferrer" href="/lottery"> Read more
+                                                    here.</a></span>
+                                        </p>
+                                        <p style="text-align: center; padding: 5px;">Your order ID is sent to your
+                                            email: <span id="sucClientEmail"></span>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="someModal roundedDiv">
+        <div class="modal fade" id="buyError" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="width: 900px!important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="buyErrorCloseBtn" data-dismiss="modal"
+                            aria-label="Close">
+                            <img src="./images/injXdark.svg" style="height: 40px; width: 40px" />
+                        </button>
+                    </div>
+                    <div class="modal-body" style="margin-bottom: 5vh;">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="form-card" id="formSuccessFields">
+                                    <div class="row justify-content-center"
+                                        style="margin: auto; text-align:center;max-width: 100%;padding: 5px;">
+                                        <h4 style="text-align:center;"><strong>This is an error! Someone just messed
+                                                something up.</strong></h4>
+                                    </div>
+                                    <div class="row justify-content-center" style="margin-top: 16px; ">
+                                        <img src="./images/injLogo.svg" style="max-height: 20vh; object-fit: contain;" />
+                                    </div>
+                                    <div class="row justify-content-center"
+                                        style="text-align:center; margin-top: 16px; padding: 5px;">
+                                        <p>Please contact our team and we will help you with this error!
+                                            <br>
+                                            <a class="textDark" href="https://twitter.com/MillionPixelINJ"
+                                                target="_blank"><i class="fab fa-twitter"></i>
+                                                <span>@MillionPixelINJ</span></a>
+                                            <br>
+                                            <a href="mailto:info@millionpixelwall.com" class="textDark"
+                                                target="_blank"><span>info@millionpixelwall.com</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lottery modal -->
+    <div class="someModal roundedDiv">
+        <div class="modal fade" id="lotteryModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog introModalDialog" role="document"
+                style="max-width: 92vw; background: transparent;">
+                <div class="modal-content introModalContent"
+                    style="width:fit-content; height: fit-content; margin: auto; background: transparent;">
+                    <div class="row justify-content-end" style="background: transparent;">
+                        <img id="closeIntroModal" src="./images/injXdark.svg" />
+                    </div>
+                    <div id="lotteryImgDesktop"
+                        style="background-image: url(https://ks.sets.lv/public/inj_banner_desktop.png); display:none;">
+                        <a href="">
+                            <img alt="" src="./images/lottery_desktop_transparent.gif" style="z-index: 3;">
+                        </a>
+                    </div>
+                    <div id="lotteryImgMobile"
+                        style="background-image: url(https://ks.sets.lv/public/inj_banner_mobile.png);  display:none; width: 86vw; background-repeat: no-repeat; background-size: contain;">
+                        <a href="">
+                            <img alt="" src="./images/lottery_mobile_transparent.gif" style="z-index: 3; width: 86vw;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="overlapMsgDiv" class="smallMsgDiv roundedDiv" style="padding-top: 0px!important;">
+        <div class="row justify-content-end">
+            <a class="closeBtn smallMsgDivCloseBtn" onclick="closeOverlapMsg()" style="cursor: pointer;">
+                <img src="./images/injXdark.svg" style="height: 20px; width: 20px; margin-right: 10px;" />
+            </a>
+        </div>
+        <div class="row">
+            <p class="smallMsgDivP"><strong>Some selected pixels are taken. Please choose from the available
+                    areas.</strong></p>
+        </div>
+    </div>
+
+    <div id="selectMsgDiv" class="smallMsgDiv roundedDiv" style="padding-top: 0px!important;">
+        <div class="row justify-content-end">
+            <a class="closeBtn smallMsgDivCloseBtn" onclick="closeSelectMsg()" style="cursor: pointer;">
+                <img src="./images/injXdark.svg" style="height: 20px; width: 20px; margin-right: 10px;" />
+            </a>
+        </div>
+        <div class="row justify-content-center">
+            <p class="smallMsgDivP" style="text-align:center;"><strong>You selected <br><span id="selectPx">
+                        pixels.</strong>
+                <br>
+                Sum: <span id="selectedSum"></span> <span>INJ</span>
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <a class="btn btnRounded btnLight smallMsgDivActBtn" onclick="openBuyModal()" style="cursor: pointer;">
+                <span>Let&#39;s go</span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- Old Intro modal -->
+    <!--  <div class="someModal">
+		<div class="modal fade" id="introModal" tabindex="-1" role="dialog" aria-hidden="true">
+		  <div class="modal-dialog introModalDialog" role="document" style="max-width: 92vw; max-height: 90vh; background: transparent;">
+		    <div class="modal-content introModalContent" style="width:fit-content; height: fit-content; margin: auto; background: transparent;">
+		    	<div class="row justify-content-end" style="background: transparent;">
+		    		<img id="closeIntroModal" th:src="@{~/images/INTRO-07.png}" />
+		    	</div>
+		    	<div class="row justify-content-center" style="text-align: center; background: transparent;">
+		    		<img onclick="clickIntro()" id="nextIntroModal" th:src="@{~/images/INTRO-08.png}" />
+		    		<img onclick="clickIntro()" id="finishIntroModal" style=" display: none;" th:src="@{~/images/INTRO-11.png}" />
+				</div>
+		    	
+				<img id="introImg1" class="introImg" th:src="@{~/images/INTRO-13.png}" />
+				<img id="introImg2" class="introImg" th:src="@{~/images/INTRO-14.png}" style="display: none;"/>
+				<img id="introImg3" class="introImg" th:src="@{~/images/INTRO-15.png}" style="display: none;"/>
+				<img id="introImg4" class="introImg" th:src="@{~/images/INTRO-16.png}" style="display: none;"/>
+				<img id="introImg5" class="introImg" th:src="@{~/images/INTRO-17.png}" style="display: none;"/>
+				<img id="introImg6" class="introImg" th:src="@{~/images/INTRO-18.png}" style="display: none;"/>
+				
+				<div class="row justify-content-center">
+		    		
+		    	</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	-->
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap 5 
+<script th:src="@{~/bootstrap/bootstrap5.bundle.min.js}" src="../bootstrap/bootstrap5.bundle.min.js" type="text/javascript"></script>
+-->
+    <!-- Font Awesome -->
+    <script src="./fontawesome/js/fontawesome.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./js/jquery.cookie.js" type="text/javascript"></script>
+
+    <!-- My custom JS -->
+    <script src="./js/custom-pixel.js" type="text/javascript"></script>
+
+    <script>
+        var orderMiniList = '[{"id":17,"xL":null,"yU":null,"xR":null,"yD":null},{"id":41,"xL":400,"yU":460,"xR":429,"yD":489},{"id":19,"xL":430,"yU":460,"xR":499,"yD":529},{"id":21,"xL":500,"yU":460,"xR":569,"yD":529},{"id":25,"xL":430,"yU":420,"xR":469,"yD":459},{"id":27,"xL":470,"yU":420,"xR":509,"yD":459},{"id":43,"xL":400,"yU":490,"xR":429,"yD":519},{"id":45,"xL":400,"yU":520,"xR":429,"yD":549},{"id":29,"xL":null,"yU":null,"xR":null,"yD":null},{"id":71,"xL":460,"yU":530,"xR":489,"yD":559},{"id":73,"xL":780,"yU":500,"xR":799,"yD":519},{"id":47,"xL":430,"yU":530,"xR":459,"yD":559},{"id":53,"xL":80,"yU":80,"xR":119,"yD":119},{"id":37,"xL":510,"yU":420,"xR":549,"yD":459},{"id":39,"xL":550,"yU":420,"xR":589,"yD":459},{"id":23,"xL":390,"yU":420,"xR":429,"yD":459},{"id":63,"xL":240,"yU":0,"xR":269,"yD":19},{"id":65,"xL":330,"yU":70,"xR":339,"yD":79},{"id":67,"xL":700,"yU":250,"xR":719,"yD":269},{"id":75,"xL":180,"yU":480,"xR":199,"yD":499},{"id":77,"xL":430,"yU":560,"xR":459,"yD":589},{"id":79,"xL":240,"yU":170,"xR":259,"yD":189},{"id":81,"xL":450,"yU":700,"xR":469,"yD":719},{"id":69,"xL":430,"yU":390,"xR":459,"yD":419},{"id":105,"xL":470,"yU":300,"xR":479,"yD":309},{"id":87,"xL":460,"yU":560,"xR":489,"yD":589},{"id":101,"xL":270,"yU":430,"xR":289,"yD":449},{"id":93,"xL":null,"yU":null,"xR":null,"yD":null},{"id":85,"xL":390,"yU":30,"xR":399,"yD":39},{"id":127,"xL":290,"yU":390,"xR":299,"yD":399},{"id":97,"xL":740,"yU":670,"xR":749,"yD":679},{"id":89,"xL":190,"yU":620,"xR":209,"yD":639},{"id":95,"xL":240,"yU":770,"xR":259,"yD":789},{"id":103,"xL":120,"yU":220,"xR":129,"yD":229},{"id":125,"xL":null,"yU":null,"xR":null,"yD":null},{"id":107,"xL":710,"yU":840,"xR":719,"yD":849},{"id":99,"xL":610,"yU":1,"xR":629,"yD":19},{"id":111,"xL":840,"yU":320,"xR":859,"yD":339},{"id":115,"xL":390,"yU":400,"xR":409,"yD":419},{"id":109,"xL":490,"yU":220,"xR":509,"yD":239},{"id":113,"xL":1,"yU":1,"xR":9,"yD":9},{"id":117,"xL":250,"yU":650,"xR":259,"yD":659},{"id":121,"xL":0,"yU":0,"xR":0,"yD":0},{"id":119,"xL":520,"yU":530,"xR":549,"yD":559},{"id":91,"xL":630,"yU":100,"xR":649,"yD":119},{"id":133,"xL":310,"yU":570,"xR":329,"yD":589},{"id":123,"xL":490,"yU":530,"xR":519,"yD":559},{"id":131,"xL":650,"yU":500,"xR":669,"yD":519},{"id":129,"xL":600,"yU":340,"xR":619,"yD":359},{"id":151,"xL":340,"yU":670,"xR":359,"yD":689},{"id":137,"xL":510,"yU":330,"xR":529,"yD":349},{"id":135,"xL":420,"yU":340,"xR":429,"yD":349},{"id":153,"xL":750,"yU":400,"xR":759,"yD":409},{"id":139,"xL":590,"yU":670,"xR":599,"yD":689},{"id":141,"xL":570,"yU":290,"xR":579,"yD":299},{"id":161,"xL":340,"yU":330,"xR":349,"yD":339},{"id":145,"xL":800,"yU":640,"xR":809,"yD":649},{"id":147,"xL":270,"yU":490,"xR":289,"yD":509},{"id":149,"xL":740,"yU":570,"xR":759,"yD":589},{"id":155,"xL":680,"yU":410,"xR":699,"yD":429},{"id":157,"xL":210,"yU":550,"xR":229,"yD":569},{"id":143,"xL":530,"yU":400,"xR":549,"yD":419},{"id":163,"xL":490,"yU":560,"xR":519,"yD":589},{"id":165,"xL":460,"yU":360,"xR":499,"yD":399},{"id":167,"xL":410,"yU":550,"xR":429,"yD":569},{"id":169,"xL":390,"yU":550,"xR":409,"yD":569},{"id":172,"xL":980,"yU":980,"xR":999,"yD":999},{"id":180,"xL":240,"yU":320,"xR":249,"yD":329},{"id":182,"xL":580,"yU":750,"xR":599,"yD":769},{"id":184,"xL":550,"yU":380,"xR":589,"yD":419},{"id":159,"xL":500,"yU":630,"xR":519,"yD":649},{"id":186,"xL":530,"yU":570,"xR":559,"yD":599},{"id":188,"xL":240,"yU":860,"xR":249,"yD":869},{"id":206,"xL":650,"yU":880,"xR":659,"yD":889},{"id":208,"xL":810,"yU":820,"xR":819,"yD":829},{"id":194,"xL":800,"yU":750,"xR":809,"yD":759},{"id":196,"xL":360,"yU":670,"xR":379,"yD":689},{"id":225,"xL":460,"yU":40,"xR":489,"yD":69},{"id":190,"xL":410,"yU":870,"xR":419,"yD":879},{"id":198,"xL":680,"yU":340,"xR":699,"yD":359},{"id":200,"xL":820,"yU":700,"xR":829,"yD":709},{"id":202,"xL":870,"yU":720,"xR":879,"yD":729},{"id":204,"xL":650,"yU":800,"xR":659,"yD":809},{"id":216,"xL":400,"yU":570,"xR":429,"yD":599},{"id":218,"xL":510,"yU":400,"xR":529,"yD":419},{"id":221,"xL":490,"yU":400,"xR":509,"yD":419},{"id":210,"xL":480,"yU":410,"xR":489,"yD":419},{"id":227,"xL":410,"yU":1,"xR":419,"yD":119},{"id":229,"xL":420,"yU":110,"xR":539,"yD":119},{"id":231,"xL":530,"yU":0,"xR":539,"yD":109},{"id":233,"xL":570,"yU":460,"xR":599,"yD":489},{"id":235,"xL":480,"yU":400,"xR":489,"yD":409},{"id":238,"xL":430,"yU":590,"xR":449,"yD":609},{"id":240,"xL":230,"yU":370,"xR":239,"yD":379},{"id":242,"xL":730,"yU":460,"xR":749,"yD":479},{"id":244,"xL":860,"yU":660,"xR":869,"yD":669},{"id":246,"xL":910,"yU":610,"xR":919,"yD":619},{"id":248,"xL":870,"yU":560,"xR":879,"yD":569},{"id":250,"xL":920,"yU":480,"xR":929,"yD":489},{"id":252,"xL":900,"yU":370,"xR":909,"yD":379},{"id":254,"xL":560,"yU":630,"xR":579,"yD":649},{"id":256,"xL":860,"yU":430,"xR":869,"yD":439},{"id":258,"xL":990,"yU":0,"xR":999,"yD":9},{"id":260,"xL":350,"yU":360,"xR":359,"yD":369},{"id":262,"xL":10,"yU":0,"xR":29,"yD":9},{"id":264,"xL":null,"yU":null,"xR":null,"yD":null},{"id":266,"xL":520,"yU":370,"xR":549,"yD":399},{"id":268,"xL":610,"yU":210,"xR":619,"yD":219},{"id":272,"xL":570,"yU":490,"xR":599,"yD":519},{"id":270,"xL":650,"yU":240,"xR":659,"yD":249},{"id":274,"xL":310,"yU":800,"xR":319,"yD":809},{"id":276,"xL":390,"yU":360,"xR":399,"yD":369},{"id":278,"xL":660,"yU":170,"xR":669,"yD":179},{"id":280,"xL":530,"yU":170,"xR":539,"yD":179},{"id":282,"xL":410,"yU":400,"xR":429,"yD":419},{"id":284,"xL":450,"yU":30,"xR":459,"yD":39},{"id":286,"xL":450,"yU":70,"xR":459,"yD":79},{"id":288,"xL":490,"yU":70,"xR":499,"yD":79},{"id":290,"xL":610,"yU":570,"xR":739,"yD":679},{"id":292,"xL":190,"yU":200,"xR":199,"yD":209},{"id":294,"xL":290,"yU":230,"xR":299,"yD":239},{"id":296,"xL":330,"yU":170,"xR":339,"yD":179},{"id":298,"xL":430,"yU":170,"xR":439,"yD":179},{"id":300,"xL":550,"yU":530,"xR":569,"yD":549},{"id":304,"xL":560,"yU":230,"xR":569,"yD":239},{"id":302,"xL":490,"yU":30,"xR":499,"yD":39},{"id":306,"xL":380,"yU":460,"xR":399,"yD":479},{"id":308,"xL":230,"yU":710,"xR":239,"yD":719},{"id":310,"xL":300,"yU":730,"xR":309,"yD":739},{"id":312,"xL":700,"yU":200,"xR":709,"yD":209},{"id":314,"xL":380,"yU":730,"xR":389,"yD":739},{"id":316,"xL":610,"yU":680,"xR":739,"yD":789},{"id":318,"xL":380,"yU":450,"xR":389,"yD":459},{"id":320,"xL":470,"yU":410,"xR":479,"yD":419},{"id":322,"xL":0,"yU":990,"xR":9,"yD":999},{"id":324,"xL":330,"yU":390,"xR":339,"yD":399},{"id":326,"xL":380,"yU":480,"xR":399,"yD":499},{"id":332,"xL":530,"yU":350,"xR":549,"yD":369},{"id":336,"xL":550,"yU":370,"xR":559,"yD":379},{"id":330,"xL":590,"yU":420,"xR":629,"yD":459},{"id":334,"xL":460,"yU":340,"xR":479,"yD":359},{"id":339,"xL":460,"yU":410,"xR":469,"yD":419},{"id":363,"xL":790,"yU":210,"xR":799,"yD":219},{"id":341,"xL":380,"yU":500,"xR":399,"yD":519},{"id":343,"xL":720,"yU":520,"xR":739,"yD":539},{"id":345,"xL":430,"yU":790,"xR":439,"yD":799},{"id":365,"xL":770,"yU":260,"xR":779,"yD":269},{"id":347,"xL":380,"yU":840,"xR":389,"yD":849},{"id":349,"xL":350,"yU":790,"xR":359,"yD":799},{"id":351,"xL":290,"yU":820,"xR":299,"yD":829},{"id":367,"xL":740,"yU":300,"xR":749,"yD":309},{"id":359,"xL":270,"yU":690,"xR":279,"yD":699},{"id":357,"xL":320,"yU":620,"xR":339,"yD":639},{"id":361,"xL":570,"yU":520,"xR":599,"yD":549},{"id":369,"xL":790,"yU":320,"xR":799,"yD":329},{"id":373,"xL":290,"yU":350,"xR":299,"yD":359},{"id":371,"xL":410,"yU":650,"xR":419,"yD":659},{"id":375,"xL":380,"yU":270,"xR":389,"yD":279},{"id":377,"xL":550,"yU":860,"xR":559,"yD":869},{"id":379,"xL":170,"yU":430,"xR":179,"yD":439},{"id":381,"xL":650,"yU":290,"xR":659,"yD":299},{"id":389,"xL":900,"yU":420,"xR":909,"yD":429},{"id":387,"xL":850,"yU":390,"xR":859,"yD":399},{"id":385,"xL":810,"yU":390,"xR":819,"yD":399},{"id":383,"xL":230,"yU":470,"xR":239,"yD":479},{"id":391,"xL":450,"yU":590,"xR":489,"yD":629},{"id":395,"xL":500,"yU":740,"xR":509,"yD":749},{"id":393,"xL":530,"yU":680,"xR":539,"yD":689},{"id":397,"xL":540,"yU":720,"xR":549,"yD":729},{"id":399,"xL":500,"yU":780,"xR":509,"yD":789},{"id":401,"xL":440,"yU":750,"xR":449,"yD":759},{"id":403,"xL":330,"yU":520,"xR":399,"yD":549},{"id":405,"xL":490,"yU":600,"xR":509,"yD":629},{"id":407,"xL":170,"yU":680,"xR":179,"yD":689},{"id":409,"xL":170,"yU":720,"xR":179,"yD":729},{"id":411,"xL":210,"yU":750,"xR":219,"yD":759},{"id":413,"xL":220,"yU":670,"xR":229,"yD":679},{"id":417,"xL":800,"yU":150,"xR":809,"yD":159},{"id":415,"xL":740,"yU":150,"xR":749,"yD":159},{"id":423,"xL":420,"yU":370,"xR":429,"yD":379},{"id":425,"xL":520,"yU":650,"xR":529,"yD":659},{"id":431,"xL":470,"yU":190,"xR":479,"yD":199},{"id":429,"xL":430,"yU":210,"xR":439,"yD":219},{"id":436,"xL":290,"yU":280,"xR":299,"yD":289},{"id":438,"xL":230,"yU":260,"xR":239,"yD":269},{"id":434,"xL":170,"yU":290,"xR":179,"yD":299},{"id":440,"xL":180,"yU":330,"xR":189,"yD":339},{"id":421,"xL":630,"yU":360,"xR":639,"yD":369},{"id":446,"xL":240,"yU":520,"xR":249,"yD":529},{"id":444,"xL":600,"yU":540,"xR":629,"yD":569},{"id":419,"xL":0,"yU":290,"xR":19,"yD":309},{"id":442,"xL":670,"yU":160,"xR":679,"yD":169},{"id":448,"xL":170,"yU":530,"xR":179,"yD":539},{"id":450,"xL":150,"yU":570,"xR":159,"yD":579},{"id":452,"xL":190,"yU":590,"xR":199,"yD":599},{"id":454,"xL":270,"yU":570,"xR":279,"yD":579},{"id":456,"xL":280,"yU":660,"xR":289,"yD":669},{"id":458,"xL":100,"yU":620,"xR":109,"yD":629},{"id":460,"xL":30,"yU":0,"xR":39,"yD":9}]';
+        var selectType = 'order';
+    </script>
+
+    <script src="./js/select.js" type="text/javascript"></script>
+    <script src="/router.js"></script>
+
+
+
+</body>
+
+</html>

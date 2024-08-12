@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Million Injective page</title>
+    <!--  <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+	<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="keywords" content="million Injective pixels, million, Injective, pixels, pixel">
+    <meta name="description" content="Million Injective page">
+    <meta name="ROBOTS" content="ALL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link href="/bootstrap/bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Include My Custom CSS -->
+    <link href="./css/custom.css" rel="stylesheet">
+
+    <link href="./css/custom-injective.css" rel="stylesheet">
+
+    <!-- Browser tab Icon -->
+
+    <link rel="icon" href="./images/injLogo.png">
+</head>
+
+<body>
+
+    <div>
+        <div class="container">
+            <div id="stars-div">
+                <div class="before-nav" style="width:100%; text-align: center;">
+                    <a class="textGreen textWhite" href="https://x.com/injectivecity" target="_blank" style="position: relative;
+    z-index: 10;"><i class="fab fa-twitter"></i> <span>@injectivecity</span></a>
+                    <div class="row justify-content-center" style="padding-left: 0!important;">
+
+                        <img onclick="goToHome()" src="./images/injLogo.png" class="info-main-logo-img" />
+
+                    </div>
+                    <div class="row justify-content-start"
+                        style="position: relative; margin-top: 30px; margin-left: 6px;">
+                        <a href="/" onclick="route()" class="btn btnBack2"><i class="fa-solid fa-caret-left"></i>
+                            Back</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container text-cont">
+        <h1><strong>How to buy?</strong></h1>
+        <h2>Simple, Easy, and Safe!</h2>
+        <br>
+        <p>Joining the Million Pixel INJ project is a breeze. Our process is designed to be clear and easy for everyone.
+        </p>
+        <ul style="list-style-type: none;">
+            <li>
+                <p class="how-step-p"><strong>Step 1:</strong> Choose Your Pixels</p>
+                <ul class="how-step-ul">
+                    <li>Select the size of your pixel area. The smallest option is a 10x10 pixel square (equivalent to
+                        100 pixels).</li>
+                    <li>Remember, larger pixels mean a clearer display on the wall. We recommend choosing a 20x20 pixel
+                        square.</li>
+                    <li>On the desktop, you can pick your exact spot on the wall. This feature will be available on
+                        mobile soon.</li>
+                </ul>
+            </li>
+            <li>
+                <p class="how-step-p"><strong>Step 2:</strong> Upload and Link</p>
+                <ul class="how-step-ul">
+                    <li>Upload your picture.</li>
+                    <li>Add a clickable link to your website, social media, youtube or any other URL. It's like your
+                        digital business card!</li>
+                </ul>
+            </li>
+            <li>
+                <p class="how-step-p"><strong>Step 3:</strong> Contact Information</p>
+                <ul class="how-step-ul">
+                    <li>Provide an email or other contact method for any queries and to receive your order confirmation,
+                        including a <strong>unique order ID.</strong></li>
+                    <li>This step is also important for the Pixel wall lottery notifications.</li>
+                </ul>
+            </li>
+            <li>
+                <p class="how-step-p"><strong>Step 4:</strong> Make the Payment</p>
+                <ul class="how-step-ul">
+                    <li>Complete your purchase by following the simple payment instructions.</li>
+                    <li>Ensure you input your wallet address correctly for order and payment tracking.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Your pixel art and link will be live on the wall within 24 hours after payment has been received.
+            <br>
+            <br>
+        </p>
+
+        <p class="how-step-p"><strong>Important Note:</strong>
+        <ul>
+            <li>Our team may adjust the placement of pixel images on the wall to ensure everything fits perfectly.</li>
+            <li>Only use this official payment address:
+                <strong><span>inj1cp7074ccr5vsz9u4a9myskmdmslqs76lslpdgd</span></strong>
+            </li>
+        </ul>
+        <br>
+        Questions? Reach out to us on Twitter <a class="textLight" href="https://twitter.com/MillionPixelINJ"
+            target="_blank"><span>@MillionPixelINJ</span></a> or email at <a class="textLight"
+            href="mailto:info@millionpixelwall.com" target="_blank"><span>info@millionpixelwall.com</span></a>
+        </p>
+    </div>
+
+    <!-- Fragment FOOTER : Contains footer and Javascript references -->
+    <footer>
+        <footer class="text-muted">
+            <div class="container after-canvas footer-container">
+                <!-- <div class="d-flex justify-content-center">
+	      <img th:src="@{~/images/injLogo.svg}" style="padding-top: 150px; width: 300px"/>
+	  	</div> -->
+                <div class="row justify-content-between" style="margin-top:300px;">
+                    <div class="p-2"><a class="textLight" target="_blank" href="/about" style="margin: 10px;"
+                            onclick="route()">About</a>
+                    </div>
+                    <div class="p-2"><a class="textLight" target="_blank" href="/how-to-buy" onclick="route()"
+                            style="margin: 10px;">How
+                            To Buy</a></div>
+                    <div class="p-2"><a class="textLight" target="_blank" href="/faq" onclick="route()"
+                            style="margin: 10px;">FAQ</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="margin-bottom:100px;margin-top:50px;">
+                    <div class="p-2"><a class="textLight" target="_blank" href="/terms" onclick="route()"
+                            style="margin: 10px;">Terms
+                            and
+                            Conditions</a></div>
+                </div>
+            </div>
+            <!-- Ajax -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- juQery -->
+            <script src="./js/jquery-3.4.1.js" type="text/javascript"></script>
+            <!-- Bootstrap 5 -->
+            <script src="./bootstrap/bootstrap5.bundle.min.js" type="text/javascript"></script>
+            <!-- Font Awesome -->
+            <script src="./fontawesome/js/fontawesome.min.js" type="text/javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+                integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="./js/custom-pixel.js" type="text/javascript"></script>
+            <script src="/router.js"></script>
+        </footer>
+    </footer>
+</body>
+
+
+</html>
