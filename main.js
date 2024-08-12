@@ -48,7 +48,7 @@ window.addEventListener("popstate", router);
 
             if (viewport) {
                 viewport.content = "initial-scale=0.1";
-                viewport.content = "width=98vw";
+                viewport.content = "width=800";
             }
         }
 
